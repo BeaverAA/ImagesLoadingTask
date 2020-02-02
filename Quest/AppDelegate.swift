@@ -1,17 +1,8 @@
-//
-//  AppDelegate.swift
-//  Quest
-//
-//  Created by Anton Bobr on 1/26/20.
-//  Copyright © 2020 anton bobr. All rights reserved.
-//
 
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

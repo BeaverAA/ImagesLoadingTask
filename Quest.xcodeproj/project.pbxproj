@@ -13,6 +13,8 @@
 		B71783CC23DDDE1200FF6A00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71783CA23DDDE1200FF6A00 /* Main.storyboard */; };
 		B71783CE23DDDE1300FF6A00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B71783CD23DDDE1300FF6A00 /* Assets.xcassets */; };
 		B71783D123DDDE1300FF6A00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71783CF23DDDE1300FF6A00 /* LaunchScreen.storyboard */; };
+		B71783D923DDEB0D00FF6A00 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71783D823DDEB0D00FF6A00 /* ImageCollectionViewCell.swift */; };
+		B7D51ED723E0C62E00B0D1C1 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D51ED623E0C62E00B0D1C1 /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		B71783CD23DDDE1300FF6A00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B71783D023DDDE1300FF6A00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B71783D223DDDE1300FF6A00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B71783D823DDEB0D00FF6A00 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		B7D51ED623E0C62E00B0D1C1 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				B71783CD23DDDE1300FF6A00 /* Assets.xcassets */,
 				B71783CF23DDDE1300FF6A00 /* LaunchScreen.storyboard */,
 				B71783D223DDDE1300FF6A00 /* Info.plist */,
+				B71783D823DDEB0D00FF6A00 /* ImageCollectionViewCell.swift */,
+				B7D51ED623E0C62E00B0D1C1 /* ImageLoader.swift */,
 			);
 			path = Quest;
 			sourceTree = "<group>";
@@ -140,6 +146,8 @@
 			files = (
 				B71783C923DDDE1200FF6A00 /* ViewController.swift in Sources */,
 				B71783C523DDDE1200FF6A00 /* AppDelegate.swift in Sources */,
+				B7D51ED723E0C62E00B0D1C1 /* ImageLoader.swift in Sources */,
+				B71783D923DDEB0D00FF6A00 /* ImageCollectionViewCell.swift in Sources */,
 				B71783C723DDDE1200FF6A00 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +294,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Quest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +312,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Quest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
