@@ -14,6 +14,7 @@
 		B71783CE23DDDE1300FF6A00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B71783CD23DDDE1300FF6A00 /* Assets.xcassets */; };
 		B71783D123DDDE1300FF6A00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71783CF23DDDE1300FF6A00 /* LaunchScreen.storyboard */; };
 		B71783D923DDEB0D00FF6A00 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71783D823DDEB0D00FF6A00 /* ImageCollectionViewCell.swift */; };
+		B777887B24197DFD00BAC372 /* ImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B777887A24197DFD00BAC372 /* ImageStorage.swift */; };
 		B7D51ED723E0C62E00B0D1C1 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D51ED623E0C62E00B0D1C1 /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		B71783D023DDDE1300FF6A00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B71783D223DDDE1300FF6A00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B71783D823DDEB0D00FF6A00 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		B777887A24197DFD00BAC372 /* ImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStorage.swift; sourceTree = "<group>"; };
 		B7D51ED623E0C62E00B0D1C1 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 				B71783D223DDDE1300FF6A00 /* Info.plist */,
 				B71783D823DDEB0D00FF6A00 /* ImageCollectionViewCell.swift */,
 				B7D51ED623E0C62E00B0D1C1 /* ImageLoader.swift */,
+				B777887A24197DFD00BAC372 /* ImageStorage.swift */,
 			);
 			path = Quest;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B71783C923DDDE1200FF6A00 /* ViewController.swift in Sources */,
+				B777887B24197DFD00BAC372 /* ImageStorage.swift in Sources */,
 				B71783C523DDDE1200FF6A00 /* AppDelegate.swift in Sources */,
 				B7D51ED723E0C62E00B0D1C1 /* ImageLoader.swift in Sources */,
 				B71783D923DDEB0D00FF6A00 /* ImageCollectionViewCell.swift in Sources */,

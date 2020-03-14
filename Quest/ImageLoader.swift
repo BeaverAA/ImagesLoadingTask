@@ -10,55 +10,36 @@ import UIKit
 
 class ImageLoader {
 
-    let imagesCount : Int
-    let imageLoadingQueue : DispatchQueue
-    let semaphore : DispatchSemaphore
+    private let imageLoadingQueue : DispatchQueue
+    private let semaphore : DispatchSemaphore
 
-    var currentCountImagesLoaded = 0
-    var images : [UIImage?]
-    var isImageLoading : [Bool]
+    static let shared = ImageLoader()
 
-    init(imagesCount : Int, threadPool : Int) {
-        self.imagesCount = imagesCount
-        semaphore = DispatchSemaphore(value: threadPool)
-        images = [UIImage?](repeating: nil, count: imagesCount)
-        isImageLoading = [Bool](repeating: false, count: imagesCount)
-        imageLoadingQueue = DispatchQueue(label: "com.bobr.quest.image_loading")
+    private init() {
+        semaphore = DispatchSemaphore(value: 2)
+        imageLoadingQueue = DispatchQueue(label: "com.bobr.quest.image_loading", qos: .userInitiated, attributes: .concurrent)
     }
 
-    func loadImage(with url : URL, for cell : ImageCollectionViewCell, at indexPath : IndexPath, callback : @escaping (_ images : [UIImage?]) -> Void) {
-
-        imageLoadingQueue.sync {
-            guard currentCountImagesLoaded != imagesCount else {
-                cell.image.image = images[indexPath.row]
-                return
-            }
-
-            guard isImageLoading[indexPath.row] == false else { return }
-
-            isImageLoading[indexPath.row] = true
-
+    func loadImage(with url : URL, complte : @escaping (_ image : UIImage?) -> Void) {
+        weak var weakSelf = self
+        imageLoadingQueue.async {
+            weakSelf?.semaphore.wait()
             let session = URLSession(configuration: .default)
-            let sessionTask = session.dataTask(with: url){ [weak self] (data, response, error) in
-                guard let data = data else { return }
+            let sessionTask = session.dataTask(with: url){ (data, response, error) in
+                var image: UIImage? = nil
 
-                self?.images[indexPath.row] = UIImage(data: data)
-                self?.semaphore.signal()
-                self?.imageLoadingQueue.sync {
-                    self?.currentCountImagesLoaded += 1
-                    if (self?.currentCountImagesLoaded == self?.imagesCount) {
-                        guard let images = self?.images else { return }
-                        callback(images)
-                    }
+                if let error = error {
+                    NSLog(error.localizedDescription)
                 }
-            }
+                if let data = data {
+                    image = UIImage(data: data)
+                }
+                complte(image)
 
-            DispatchQueue.global().async { [weak self] in
-                self?.semaphore.wait()
-                sessionTask.resume()
+                weakSelf?.semaphore.signal()
             }
+            sessionTask.resume()
         }
-
     }
 
 }

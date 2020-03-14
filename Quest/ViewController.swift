@@ -5,8 +5,6 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
-    let imageLoader = ImageLoader(imagesCount: 10, threadPool: 2)
-
     var urls = [String]()
 
     override func viewDidLoad() {
@@ -38,17 +36,11 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource 
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
 
-        imageLoader.loadImage(with: URL(string: urls[indexPath.row])!, for: cell, at: indexPath) { (images) in
-            DispatchQueue.main.async {
-                for cell in collectionView.visibleCells {
-                    guard let cell = cell as? ImageCollectionViewCell, let indexPath = collectionView.indexPath(for: cell) else { return }
-                    cell.image.image = images[indexPath.row]
-                }
-            }
+        if let imageCell = cell as? ImageCollectionViewCell {
+            imageCell.imageURL = URL(string: urls[indexPath.item])
         }
-
         return cell
     }
 

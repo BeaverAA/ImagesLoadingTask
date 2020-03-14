@@ -37,17 +37,23 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="345" height="152"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="BEJ-ET-jk4">
+                                                    <rect key="frame" x="162" y="66" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="UJ2-vM-C10" secondAttribute="bottom" id="DtF-0C-A1S"/>
                                                 <constraint firstItem="UJ2-vM-C10" firstAttribute="leading" secondItem="Rwe-uF-7HD" secondAttribute="leading" id="PcP-1v-NEe"/>
                                                 <constraint firstAttribute="trailing" secondItem="UJ2-vM-C10" secondAttribute="trailing" id="dVl-mt-TJD"/>
                                                 <constraint firstItem="UJ2-vM-C10" firstAttribute="top" secondItem="Rwe-uF-7HD" secondAttribute="top" id="hyo-dd-uO9"/>
+                                                <constraint firstItem="BEJ-ET-jk4" firstAttribute="centerX" secondItem="Rwe-uF-7HD" secondAttribute="centerX" id="rDc-03-eC7"/>
+                                                <constraint firstItem="BEJ-ET-jk4" firstAttribute="centerY" secondItem="Rwe-uF-7HD" secondAttribute="centerY" id="z3m-Ar-hj9"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="345" height="152"/>
                                         <connections>
-                                            <outlet property="image" destination="UJ2-vM-C10" id="8Bh-4Q-Ymi"/>
+                                            <outlet property="imageView" destination="UJ2-vM-C10" id="8Bh-4Q-Ymi"/>
+                                            <outlet property="spinner" destination="BEJ-ET-jk4" id="eMh-qA-432"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
